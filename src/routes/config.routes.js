@@ -15,8 +15,8 @@ router.get('/', async (req, res) => {
 // metodo que envia datos a traves de http
 router.post('/', async (req,res) => {
     
-    const { name, message } = req.body;
-    const dataConfig = new Config({ name, message })
+    // const { name, message } = req.body;
+    const dataConfig = new Config({ _id: "1", name: "User name", message: "Help me, this is a default messge. please edit this config" })
 
     await dataConfig.save();
 
@@ -35,6 +35,13 @@ router.put('/:id', async (req, res) => {
     await Config.findByIdAndUpdate(req.params.id, newConfig);
 
     res.json({ status: 'configuracion actualizada '});
+
+})
+
+router.delete('/:id', async (req, res) => {
+
+    await Config.findByIdAndDelete(req.params.id);
+    res.json({ status: 'configuracion eliminada' })
 
 })
 

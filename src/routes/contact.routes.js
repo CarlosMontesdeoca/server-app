@@ -40,7 +40,8 @@ router.post('/', async (req,res) => {
 
 //     await Contact.findByIdAndUpdate(req.params.id, newContatc);
 
-//     res.json({ status: 'contacto actualizado'});
+//     res.json({ status: 'contacto actualizado'});+
+
 
 // })
 
@@ -48,7 +49,7 @@ router.post('/', async (req,res) => {
 router.delete('/:id', async (req, res) => {
 
     await Contact.findByIdAndDelete(req.params.id);
-    res.json({ status: 'cliente eliminado' })
+    res.json({ status: 'contacto eliminado' })
 
 })
 

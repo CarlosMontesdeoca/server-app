@@ -2,6 +2,7 @@ const mongoose = require('mongoose');
 const { Schema } = mongoose;
 
 const ConfigSchema = new Schema({
+    _id: { type: String, require: true },
     name: { type: String, required: true },
     message: { type: String, required: true },
 })
