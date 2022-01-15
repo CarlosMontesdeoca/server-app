@@ -41,7 +41,7 @@ router.put('/:id', async (req, res) => {
 router.delete('/:id', async (req, res) => {
 
     await Config.findByIdAndDelete(req.params.id);
-    res.json({ status: 'configuracion eliminada' })
+    res.json({ status: 'configuracion eliminada.' })
 
 })
 
