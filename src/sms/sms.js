@@ -8,9 +8,9 @@ const client = new twilio(acountSid, auth);
 const createSMS = () => {
     client.messages.create({
         body: 'mensaje de prueba',
-        to: '+5930978885465',
+        to: '+593978885465',
         form: '+19377613379'
-    }).then((message) => console.log('mensaje enviado'))
+    }).then((message) => console.log('mensaje enviado', message.sid))
 }
 
 exports.sendSMS = () => createSMS();
