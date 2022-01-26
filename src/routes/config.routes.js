@@ -16,7 +16,7 @@ router.get('/', async (req, res) => {
 router.post('/', async (req,res) => {
     
     // const { name, message } = req.body;
-    const dataConfig = new Config({ _id: "1", name: "User name", message: "Help me, this is a default messge. please edit this config" })
+    const dataConfig = new Config({ _id: "1", name: "User name", phone: '+593987654321', message: "Help me, this is a default messge. please edit this config" })
 
     await dataConfig.save();
 
@@ -25,14 +25,14 @@ router.post('/', async (req,res) => {
 });
 
 // metodo para editar al cliente
-router.put('/:id', async (req, res) => {
+router.put('/', async (req, res) => {
 
-    const { name, message} = req.body;
-    const newConfig  = { name, message };
+    const { name, phone, message} = req.body;
+    const newConfig  = { name, phone, message };
     //obtengo el id del cliente al que estoy buscando 
-    console.log(req.params.id); 
+    // console.log(req.params.id); 
 
-    await Config.findByIdAndUpdate(req.params.id, newConfig);
+    await Config.findByIdAndUpdate(1, newConfig);
 
     res.json({ status: 'configuracion actualizada '});
 
